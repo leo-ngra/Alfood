@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Button, TextField } from "@mui/material"
+import { Box, Button, TextField, Typography } from "@mui/material"
 import axios from "axios"
 import { useParams } from "react-router-dom"
 import IRestaurante from "../../../interfaces/IRestaurante"
@@ -36,14 +36,19 @@ const FormularioRestaurante = () => {
 
 
     return (
-        <form onSubmit={aoSubmeterForm}>
-            <TextField
-                value={nomeRestaurante}
-                onChange={evento => setNomeRestaurante(evento.target.value)}
-                label="Nome do Restaurante"
-                variant="standard" />
-            <Button type="submit" variant="outlined">Salvar</Button>
-        </form>
+        <Box sx={{display:'flex', flexDirection:'column', alignItems:'center'}}>
+            <Typography component='h1' variant='h6'>Formulário de Restaurantes</Typography>
+            <Box component='form' onSubmit={aoSubmeterForm}>
+                <TextField
+                    value={nomeRestaurante}
+                    onChange={evento => setNomeRestaurante(evento.target.value)}
+                    label="Nome do Restaurante"
+                    variant="standard"
+                    fullWidth
+                    required />
+                <Button sx={{marginTop: 1}} type="submit" fullWidth variant="outlined">Salvar</Button>
+            </Box>
+        </Box>
     )
 }
 
