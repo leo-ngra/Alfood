@@ -31,3 +31,6 @@ Depois, acesse <a href="http://localhost:3000/">http://localhost:3000/</a> no se
 ```
 npm i axios
 ```
+```
+npm install @mui/material @emotion/react @emotion/styled
+```
